@@ -4,3 +4,5 @@ En este repositorio se compartirá código referente al taller práctico de Java
 1. Se agregaron los archivos html y js correspondientes para cada parte del curso
 
 2. Se crearón formulas matemáticas para calcular perimétro y área tanto de un cuadrado como de un triangulo.
+
+3. Se crearón formulas matemáticas para calcular perimétro y área de un circulo.
