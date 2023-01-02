@@ -1,23 +1,32 @@
 function calcularTriangulo(lado1, lado2, base, altura) {
-    console.log({
+    return {
         perimetro: lado1 + lado2 + base,
         area: (base * altura) / 2,
-    });
+    };
 }
 
 function calcularCuadrado(lado) {
-    console.log({
+    return {
         perimetro: lado * 4,
         area: lado * lado,
-    });
+    };
 }
 
 function calcularCirculo(diametro, radio) {
-    console.log({
+    return {
         circunferencia: diametro * Math.PI,
         areaCirculo1: ((diametro / 2) ** 2) * Math.PI,
         areaCirculo2: Math.pow(radio, 2) * Math.PI,
-    });
+    };
+}
+
+function calcularAlturaTriangulo(lado1, base) {
+    if (lado1 == base) {
+        console.warn('Este no es un triángulo isosceles');
+    } else {
+        const altura = Math.sqrt( ( lado1 ** 2 ) - ( ( base ** 2 ) / 4 ) );
+        return altura;
+    }
 }
 
 const ladoCuadrado = 5;
