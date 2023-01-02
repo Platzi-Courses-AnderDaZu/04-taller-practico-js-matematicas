@@ -36,9 +36,40 @@ function calcularPrecioConDescuento() {
     Object.keys(cupones).forEach(element => {
         if (element == cupon) {
             discount2 = Number(cupones[element]);
-            return;
+            // return;
         }
     });
+
+    if ( cuponesObj[cupon] ) {
+        discount2 = Number(cuponesObj[cupon]);
+        // return;
+    } 
+    // else {
+    //     result.innerText = 'Por favor ingresa un cupón valido';    
+    //     return;
+    // }
+
+    function buscarCupon(cuponElement) {
+        return cuponElement.name == cupon;
+        // console.log({
+        //     cupon,
+        //     cuponElement
+        // });
+    }
+    function buscarCupon2(cuponElement) {
+        return cuponElement.name == cupon;
+    }
+
+    const cuponArray = cuponesList.filter(buscarCupon);
+    const cuponArray2 = cuponesList2.find(buscarCupon2);
+
+    if ( cuponArray.length > 0 ) {
+        discount2 = cuponArray[0].descuento;
+    }
+
+    if ( cuponArray2 ) {
+        discount2 = cuponArray2.descuento;
+    }
 
     if ( discount > 100 ) {
         result.innerText = 'Por favor ingresa un descuento valido';
@@ -68,5 +99,38 @@ const cupones = {
     dos: 20,
     tres: 30
 }
+
+const cuponesObj = {
+    'Ander': 10,
+    'navidavi': 15,
+    'black': 20
+}
+
+const cuponesList = [
+    {
+        name: 'Ander2',
+        descuento: 10
+    },
+    {
+        name: 'merca',
+        descuento: 20
+    }
+];
+
+cuponesList.push({
+    name: 'hoy',
+    descuento: 25
+});
+
+const cuponesList2 = [
+    {
+        name: 'menor',
+        descuento: 5
+    },
+    {
+        name: 'mayor',
+        descuento: 8
+    }
+];
 
 btn.addEventListener('click', calcularPrecioConDescuento);

@@ -8,3 +8,5 @@ En este repositorio se compartirá código referente al taller práctico de Java
 3. Se crearón formulas matemáticas para calcular perimétro y área de un circulo.
 
 4. Se llevo a cabo el calculo para calcular el descuento de productos mediante cupones.
+
+5. Se permitio calcular el descuento usando cupones desde arrays y objetos, se resalta que se emplearon métodos del array como find y filter.
