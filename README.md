@@ -12,3 +12,5 @@ En este repositorio se compartirá código referente al taller práctico de Java
 5. Se permitio calcular el descuento usando cupones desde arrays y objetos, se resalta que se emplearon métodos del array como find y filter.
 
 6. Se aplico el método reduce del array para calcular el promedio de n números
+
+7. Se creo el método que permita calcular la mediana de una serie de elementos de un array.
