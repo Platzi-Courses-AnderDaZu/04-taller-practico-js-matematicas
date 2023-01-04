@@ -130,3 +130,20 @@ function ordenarListaBidimensional(listaDesordenada, i)
     const lista = listaDesordenada.sort(ordenarListaSort);
     return lista;
 }
+
+function promedioPonderado(array) 
+{
+    // array -> [ {note: 5, credit:2}, {note: 4, credit: 3} ]
+    // array.length -> cantidad de notas o creditos
+    let total = 0;
+    let credits = 0;
+    const elements = array.forEach( e => {
+        total = total + ( e['note'] * e['credit'] );
+        credits = credits + e['credit'];
+    } );
+    const elements2 = array.map( e => { // 10, 12
+        return  e['note'] * e['credit'] ;
+    } );
+    let promedio = total / credits;
+    return {promedio, elements2 };
+}
