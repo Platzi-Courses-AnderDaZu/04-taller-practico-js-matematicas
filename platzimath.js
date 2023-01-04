@@ -46,8 +46,62 @@ function calcularMediana(array)
     }
 }
 
-function order(array) {
+function ordenarLista(a, b) {
+    // mayor a menor
+    // console.log({
+    //     a,
+    //     b
+    // });
+    // if ( a > b ) {
+    //     return 1;
+    // } else if( a == b ) {
+    //     return 0;
+    // } else if ( a < b ) {
+    //     return -1;
+    // }
+    return a - b;
+}
 
-    const ordenar = array.sort( (a,b) => a - b );
+function order(array) 
+{
+    const ordenar = array.sort(ordenarLista);
+    // const ordenar = array.sort( (a,b) => a - b );
     return ordenar;
+}
+
+function calcularModa(array) 
+{
+    let moda = {
+        valor: 0,
+        cantidad: 0
+    };
+    array.forEach(element => {
+        const sele = array.filter( (e) => e == element );
+        if ( moda.cantidad < sele.length ) {
+            moda.cantidad = sele.length;
+            moda.valor = element;
+
+        }
+        // console.log(sele);
+        // console.log(moda);
+    });    
+    return moda;
+}
+
+function calcularModa2(lista) 
+{
+    const listaCount = {};
+    for (let i = 0; i < lista.length; i++) 
+    {    
+        const element = lista[i];
+
+        if ( listaCount[element] ) 
+        {
+            listaCount[element] += 1;    
+        } else {
+            listaCount[element] = 1;    
+        }
+        // listaCount[element] = lista.filter( (e) => e == element ); 
+    }  
+    return listaCount;  
 }
