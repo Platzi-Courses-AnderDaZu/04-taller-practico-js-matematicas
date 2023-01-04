@@ -14,3 +14,5 @@ En este repositorio se compartirá código referente al taller práctico de Java
 6. Se aplico el método reduce del array para calcular el promedio de n números
 
 7. Se creo el método que permita calcular la mediana de una serie de elementos de un array.
+
+8. Se creo el método que permita calcular la moda entre una serio de elementos de una array, es de resaltar que el método encuentra el, no los elementos que más se repitan. 

@@ -103,5 +103,30 @@ function calcularModa2(lista)
         }
         // listaCount[element] = lista.filter( (e) => e == element ); 
     }  
-    return listaCount;  
+    console.log(listaCount);
+    const listaArray = Object.entries(listaCount);
+    console.log(listaArray);
+    // return listaCount;  
+    const listaOrdenada = ordenarListaBidimensional(listaArray, 1);
+    const moda = listaOrdenada[0];
+    const validarModa = listaOrdenada.filter( (e) => e[1] == moda[1] );
+    console.log(validarModa);
+    if ( validarModa.length == 1 ) {
+        console.log('Moda: '+moda[0]);
+        return moda[0];
+    } else if( validarModa.length > 1 ) {
+        console.log('No hay moda, porque varios elementos se repiten igual número de veces.');
+    }
+    // return listaOrdenada[0][0];
+}
+
+function ordenarListaBidimensional(listaDesordenada, i) 
+{
+    function ordenarListaSort(a, b) 
+    {
+        return b[i] - a[i];    
+    }
+
+    const lista = listaDesordenada.sort(ordenarListaSort);
+    return lista;
 }
