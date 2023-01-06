@@ -19,4 +19,6 @@ En este repositorio se compartirá código referente al taller práctico de Java
 
 9. Se agrego el archivo correspondiente a la lista de salarios de diferentes personas, de igual manera ya se puede calcular desde el nuevo archivo analisis.js la media de salario de una (persona) basado en su información.
 
-10. Se moldeo la información de salarios para armar información basada en las empresas
+10. Se moldeo la información de salarios para armar información basada en las empresas.
+
+11. Se creo el método que calcula la mediana entre los salarios de un año para una empresa.

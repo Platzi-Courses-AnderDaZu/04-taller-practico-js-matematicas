@@ -65,4 +65,27 @@ salarios.forEach(persona => {
         empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
     }
 });
+
+function calcularMedianaEmpresa(nameEmpresa, year) {
+    if ( empresas[nameEmpresa] && empresas[nameEmpresa][year].length > 0 ) {
+        const salarios = empresas[nameEmpresa][year];
+        const mediana = PlatziMath.calcularMediana(salarios);
+        return mediana
+    } else if( !empresas[nameEmpresa] ) {
+        console.warn('Empresa no existe');
+    } else if ( !empresas[nameEmpresa][year] ) {
+        console.warn('No existe año para empresa '+empresas[nameEmpresa]);
+    }
+}
+
+function medianaEmpresaYear(name, year) {
+    if ( !empresas[name] ) {
+        console.warn('Empresa no existe');
+    } else if( !empresas[name][year] ) {
+        console.warn('La empresa no dio salarios ese año');
+    } else {
+        return PlatziMath.calcularMediana(empresas[name][year]);
+    }
+
+}
 console.log({empresas});
