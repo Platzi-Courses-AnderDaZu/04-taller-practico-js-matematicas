@@ -17,4 +17,6 @@ En este repositorio se compartirá código referente al taller práctico de Java
 
 8. Se creo el método que permita calcular la moda entre una serio de elementos de una array, es de resaltar que el método encuentra el, no los elementos que más se repitan. 
 
-9. Se agrego el archivo correspondiente a la lista de salarios de diferentes personas, de igual manera ya se puede calcular la media de salario de una (persona) basado en su información.
+9. Se agrego el archivo correspondiente a la lista de salarios de diferentes personas, de igual manera ya se puede calcular desde el nuevo archivo analisis.js la media de salario de una (persona) basado en su información.
+
+10. Se moldeo la información de salarios para armar información basada en las empresas

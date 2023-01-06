@@ -6,15 +6,15 @@ function buscarPersona(namePerson) {
     //     return e.name == namePerson;
     // } );
     // return person;
-    return salarios.find( e => e.name == namePerson );
+    return salarios.find(e => e.name == namePerson);
 }
 
 function medianaPersona(nombrePersona) {
     const trabajos = buscarPersona(nombrePersona).trabajos;
     // const ordenarTrabajos = PlatziMath.ordenarListaBidimensional(trabajos, 2);
-    const salarios = trabajos.map( e => {
+    const salarios = trabajos.map(e => {
         return e.salario;
-    }); 
+    });
     const mediana = PlatziMath.calcularMediana(salarios);
     console.log({
         trabajos,
@@ -24,5 +24,45 @@ function medianaPersona(nombrePersona) {
     });
 }
 
+function proyeccionPorPersona(nombrePersona) {
+    const trabajos = buscarPersona(nombrePersona).trabajos;
+    let ultimoSalario = 0;
+    let porcentajesCrecimiento = [];
 
-// console.log(persona);
+    for (let i = 1; i < trabajos.length; i++) {
+        const crecimiento = trabajos[i].salario - trabajos[i - 1].salario;
+        // const porcentajeCrecimiento = ((crecimiento / trabajos[i-1].salario) * 100).toFixed(2);
+        // const porcentajeCrecimiento = (crecimiento / trabajos[i-1].salario).toFixed(2);
+        const porcentajeCrecimiento = (crecimiento / trabajos[i - 1].salario);
+        porcentajesCrecimiento.push(porcentajeCrecimiento);
+
+        // para encontrar ultimo salario
+        // if ( i == (trabajos.length - 1) ) { 
+        //     ultimoSalario = trabajos[i].salario;
+        // }
+    }
+
+    const mediaCrecimiento = PlatziMath.calcularMediana(porcentajesCrecimiento);
+    ultimoSalario = trabajos[trabajos.length - 1].salario; // para encontrar ultimo salario
+    // const proyecconSalario = ultimoSalario + ( ( ultimoSalario * mediaCrecimiento ) / 100 );
+    const proyecconSalario = ultimoSalario + (ultimoSalario * mediaCrecimiento);
+
+    // console.log({trabajos, porcentajesCrecimiento, mediaCrecimiento, ultimoSalario, proyecconSalario});
+    return proyecconSalario;
+}
+
+// Análisis empresarial
+const empresas = {};
+
+salarios.forEach(persona => {
+    for (trabajo of persona.trabajos) {
+        if (!empresas[trabajo.empresa]) {
+            empresas[trabajo.empresa] = {};
+        }
+        if (!empresas[trabajo.empresa][trabajo.year]) {
+            empresas[trabajo.empresa][trabajo.year] = [];
+        }
+        empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
+    }
+});
+console.log({empresas});

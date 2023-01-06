@@ -45,7 +45,7 @@ PlatziMath.calcularMediana = function calcularMediana(array)
         // const posi = Math.floor((array.length / 2) + 1);
         const posi = Math.ceil((array.length)/2);
         const newArray = array.sort( (a,b) => a - b );
-        const element = newArray[posi];
+        const element = newArray[posi-1];
         return element;
     }
 }
